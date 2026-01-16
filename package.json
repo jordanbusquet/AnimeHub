@@ -1,0 +1,15 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "package npm v1.0.0",
+  "main": "main.js",
+  "scripts": {
+	"start": "electron .",
+    "test": "test"
+  },
+  "author": "BUSQUET Jordan",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^40.0.0"
+  }
+}
