@@ -30,46 +30,12 @@ function createWindow() {
 }
 
 function initDatabase() {
-
-	if (!fs.existsSync(userDataPath)) {
-		fs.mkdirSync(userDataPath, { recursive: true });
-	}
-
-	if (!fs.existsSync(imagesDir)) {
-		fs.mkdirSync(imagesDir, { recursive: true });
-	}
+	fs.mkdirSync(userDataPath, { recursive: true });
+	fs.mkdirSync(imagesDir, { recursive: true });
 
 	if (!fs.existsSync(dataPath)) {
-
-		const defaultFile = path.join(
-			__dirname,
-			"data",
-			"anime.json"
-		);
-
-		fs.copyFileSync(defaultFile, dataPath);
-
+		fs.writeFileSync(dataPath, '[]\n', 'utf8');
 	}
-
-}
-
-function initAnimeFile() {
-
-    const userDataPath = app.getPath("userData");
-    const userAnimeFile = path.join(userDataPath, "anime.json");
-
-    if (!fs.existsSync(userAnimeFile)) {
-
-        const defaultFile = path.join(
-            __dirname,
-            "data",
-            "anime.json"
-        );
-
-        fs.copyFileSync(defaultFile, userAnimeFile);
-
-    }
-
 }
 
 function readAnimes() {
@@ -163,7 +129,7 @@ ipcMain.handle('select-image', async () => {
 })
 
 app.whenReady().then(() => {
-	initAnimeFile();
+	initDatabase();
 	createWindow()
 
 	app.on('activate', () => {

@@ -1,38 +1,30 @@
 # AnimeHub
 
-## Description
+AnimeHub est une application de bureau Electron pour suivre les animes et les series regardes, en cours ou a voir.
 
-**AnimeHub** est une application de bureau qui permet de lister l'enssemble des animes regardés,
-en cours ou bien mêmes en attentes.
-L'application est basé sur **Electron**.
+## Developpement
 
-## Utilisation
+Prerequis : Node.js et npm.
 
-Permet d'**initialiser** npm dans le projet
-``` bash
-npm init
-```
+Depuis le dossier du projet, installe les dependances puis lance l'application :
 
-Permet d'**importer** les modules d'Electron
-``` bash
+```powershell
 npm install
-npm install electron-builder@latest --save-dev
-npm install electron --save-dev
+npm start
 ```
 
-Permet de **lancer** l'application
-``` bash
-npm run start
+## Creer l'installateur Windows
+
+Pour generer l'installateur :
+
+```powershell
 npm run build
 ```
 
-Permet d'**importer** les modules Electron-Forge
-``` bash
-npm install --save-dev @electron-forge/cli
-npx electron-forge import
-```
+Le fichier d'installation est genere dans `dist/` (par exemple `AnimeHub Setup 1.0.0.exe`). Lance cet installateur pour installer l'application. Le dossier `dist/` est ignore par Git : les installateurs ne sont pas inclus dans le depot.
 
-Permet d'**utiliser** Elecron-Forge
-``` bash
-npm run make
-```
+## Donnees de l'application
+
+AnimeHub cree automatiquement une liste vide (`anime.json`) et un dossier `images/` dans son dossier de donnees utilisateur au premier lancement. Les dossiers `data/` et `images/` a la racine du projet ne sont donc pas necessaires pour cloner, lancer ou compiler l'application. Les images choisies dans l'application sont copiees dans ce dossier utilisateur.
+
+Sous Windows, les donnees de la version installee se trouvent dans `%APPDATA%\\AnimeHub`. En mode developpement, elles se trouvent generalement dans `%APPDATA%\\animehub`. Ces donnees sont locales a l'ordinateur et ne sont pas versionnees dans Git.
