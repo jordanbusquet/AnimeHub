@@ -1,0 +1,9 @@
+# Liste des fichiers inutile pour git
+
+# electron
+dist/
+node_modules/
+
+# save
+data/
+images/

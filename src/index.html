@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AnimeHub</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div class="app-shell">
+			<section class="form-container">
+				<div class="form-header">
+					<h2 id="form-title">Ajouter un anime</h2>
+				</div>
+
+				<div class="form-main">
+					<input id="title" placeholder="Titre de l'anime">
+					<input id="image" type="hidden">
+					<button id="pick-image" type="button" class="secondary">Choisir une image</button>
+					<textarea id="description" placeholder="Description"></textarea>
+					<div class="menu">
+						<div class="status-wrapper">
+							<button id="status-toggle" class="status-toggle" type="button" title="Choisir un statut" aria-label="Choisir un statut">
+								À voir
+							</button>
+							<div id="status-menu" class="status-menu" role="menu" aria-label="Menu de statut">
+								<button class="status-option" type="button" data-value="À voir" role="menuitem">À voir</button>
+								<button class="status-option" type="button" data-value="En cours" role="menuitem">En cours</button>
+								<button class="status-option" type="button" data-value="Terminé" role="menuitem">Terminé</button>
+							</div>
+						</div>
+					</div>
+					<input id="season" type="number" min="1" step="1" inputmode="numeric" placeholder="Saison">
+					<input id="episodes" type="number" min="1" step="1" inputmode="numeric" placeholder="Episodes">
+					<textarea id="link-anime" class="link" placeholder="Lien vers l'anime"></textarea>
+					<input id="scan" type="number" min="1" step="1" inputmode="numeric" placeholder="Scan">
+					<textarea id="link-scans" class="link" placeholder="Lien vers les scans"></textarea>
+					<button id="add">Ajouter</button>
+				</div>
+			</section>
+
+			<section class="library-panel">
+				<div class="library-header">
+					<h2 class="title">Ma bibliothèque</h2>
+					<div class="library-controls">
+						<input id="search-input" type="text" placeholder="Rechercher un anime">
+						<div class="sort-wrapper">
+							<button id="sort-toggle" class="sort-toggle" type="button" title="Trier la bibliothèque" aria-label="Trier la bibliothèque">
+								☰
+							</button>
+							<div id="sort-menu" class="sort-menu" role="menu" aria-label="Menu de tri">
+								<button class="sort-option" type="button" data-value="title-asc" role="menuitem">Titre A-Z</button>
+								<button class="sort-option" type="button" data-value="title-desc" role="menuitem">Titre Z-A</button>
+								<button class="sort-option" type="button" data-value="status" role="menuitem">Statut</button>
+								<button class="sort-option" type="button" data-value="status:À voir" role="menuitem">À voir</button>
+								<button class="sort-option" type="button" data-value="status:En cours" role="menuitem">En cours</button>
+								<button class="sort-option" type="button" data-value="status:Terminé" role="menuitem">Terminé</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<section id="anime-list"></section>
+			</section>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

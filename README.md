@@ -15,10 +15,24 @@ npm init
 
 Permet d'**importer** les modules d'Electron
 ``` bash
+npm install
+npm install electron-builder@latest --save-dev
 npm install electron --save-dev
 ```
 
 Permet de **lancer** l'application
 ``` bash
 npm run start
+npm run build
+```
+
+Permet d'**importer** les modules Electron-Forge
+``` bash
+npm install --save-dev @electron-forge/cli
+npx electron-forge import
+```
+
+Permet d'**utiliser** Elecron-Forge
+``` bash
+npm run make
 ```
